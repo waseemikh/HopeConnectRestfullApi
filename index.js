@@ -1,16 +1,9 @@
-const express = require("express");
-const app = express();
-const PORT = 3000;
+const sequelize = require("../config/db");
+const User = require("./User");
+const Orphan = require("./Orphan");
+const Orphanage = require("./Orphanage");
+const Donation = require("./Donation");
+const Volunteer = require("./Volunteer");
 
-// Middleware
-app.use(express.json());
-
-// Route
-app.get("/", (req, res) => {
-	res.send("Hello, Express!");
-});
-
-// Start server
-app.listen(PORT, () => {
-	console.log(`Server is running at http://localhost:${PORT}`);
-});
+// associations here if needed
+module.exports = { sequelize, User, Orphan, Orphanage, Donation, Volunteer };

@@ -76,7 +76,7 @@ router.put("/:id", async (req, res) => {
 			const updatedonation = await donationModel.findByPk(req.params.id);
 			res.json(updatedonation);
 		} else {
-			res.status(404).json({ error: "user not found" });
+			res.status(404).json({ error: "donation not found" });
 		}
 	} catch (error) {
 		res.status(400).json({ error: error.message });

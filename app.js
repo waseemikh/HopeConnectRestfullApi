@@ -6,6 +6,7 @@ const sequelize = require("./config/db");
 const authController = require("./controllers/authController");
 const UserController = require("./controllers/UserControllers");
 const DonationController = require("./controllers/donationController");
+const OrphanController = require("./controllers/orphanController");
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,8 @@ app.use(morgan("dev"));
 app.use("/api/auth", authController);
 app.use("/api/user", UserController);
 app.use("/api/donation", DonationController);
+app.use("/api/orphan", OrphanController);
+
 // error handler
 app.use((err, req, res, next) => {
 	console.error(err);

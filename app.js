@@ -9,6 +9,7 @@ const DonationController = require("./controllers/donationController");
 const OrphanController = require("./controllers/orphanController");
 const volunteerController = require("./controllers/volunteerController");
 const emergencyController = require("./controllers/emergencyController");
+const logisticController = require("./controllers/logisticsController");
 
 const app = express();
 app.use(cors());
@@ -21,7 +22,8 @@ app.use("/api/user", UserController);
 app.use("/api/donation", DonationController);
 app.use("/api/orphan", OrphanController);
 app.use("/api/Volunteer", volunteerController);
-app.use("api/emergency", emergencyController);
+app.use("/api/emergency", emergencyController);
+app.use("/api/logistic", logisticController);
 
 // error handler
 app.use((err, req, res, next) => {

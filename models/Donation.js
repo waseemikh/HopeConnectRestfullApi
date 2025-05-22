@@ -2,7 +2,6 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 const User = require("./User");
 const Orphan = require("./Orphan");
-const Orphanage = require("./Orphanage");
 
 const Donation = sequelize.define(
 	"Donation",
@@ -37,7 +36,7 @@ Donation.belongsTo(User, { foreignKey: "userId" });
 Orphan.hasMany(Donation, { foreignKey: "orphanId" });
 Donation.belongsTo(Orphan, { foreignKey: "orphanId" });
 
-Orphanage.hasMany(Donation, { foreignKey: "orphanageId" });
-Donation.belongsTo(Orphanage, { foreignKey: "orphanageId" });
+// Orphanage.hasMany(Donation, { foreignKey: "orphanageId" });
+// Donation.belongsTo(Orphanage, { foreignKey: "orphanageId" });
 
 module.exports = Donation;
